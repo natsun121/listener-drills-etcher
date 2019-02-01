@@ -1,10 +1,26 @@
 // Add Event Listeners here:
+function activeCell() {
+  $('.cell').hover(
+    function() {
+      $(this).addClass('active');
+      console.log('hover');
+    });
+};
 
+function clearGrid() {
+  $('button').click(
+    function() {
+      createAndPlaceRows(8);
+      activeCell();
+    }
+  );
+};
 
 // When DOM is ready:
 $(() => {
   createAndPlaceRows(8);
-
+  activeCell();
+  clearGrid();
   // Bind your event listeners here:
 });
 
