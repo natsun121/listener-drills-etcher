@@ -7,11 +7,17 @@ function activeCell() {
     });
 };
 
+function activeCell2() {
+  $('.grid').on('mouseover', '.cell',
+    function() {
+      $(this).addClass('active');
+    });
+};
+
 function clearGrid() {
   $('button').click(
     function() {
       createAndPlaceRows(8);
-      activeCell();
     }
   );
 };
@@ -19,7 +25,7 @@ function clearGrid() {
 // When DOM is ready:
 $(() => {
   createAndPlaceRows(8);
-  activeCell();
+  activeCell2();
   clearGrid();
   // Bind your event listeners here:
 });
